@@ -27,13 +27,13 @@ Laravel is a free, open-source PHP web framework, created by Taylor Otwell and i
 
 Go to Database and you find.sql file if you don't able to migrate database via seeder.<br>
 
-### Login for Admin:  <br> <b>Url</b>- http://localhost:8080/login </br> <b>User Email</b>- gps.worldtrack@gmail.com <br>  <b>Password</b>- 12345678  <br>
+### Login for Admin:  <br> <b>Url</b>- http://localhost:8000/login </br> <b>User Email</b>- gps.worldtrack@gmail.com <br>  <b>Password</b>- 12345678  <br>
 
 ### Installations / Instructions
 
 Open .env file to configure your database and it's name, host, and password<br>
 
-composer install<br>
+composer update   OR composer install<br>
 
 cp .env.example .env / copy .env.example .env<br>
 
