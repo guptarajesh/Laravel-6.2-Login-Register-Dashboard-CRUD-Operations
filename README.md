@@ -8,6 +8,7 @@ Laravel based CRUD application, used to User Login, Registration, Dashboard and 
 
 <b>Database</b>- Go to Database and you find.sql file if you don't able to migrate database via seeder.<br>
 
+<b>Login for Admin:</b>  <br> <b>Url</b>- http://localhost:8080/login </br> <b>User Email</b>- gps.worldtrack@gmail.com <br>  <b>Password</b>- 12345678  <br>
 
 <b>Installations / Instructions</b><br>
 
