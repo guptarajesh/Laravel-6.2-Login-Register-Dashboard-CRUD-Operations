@@ -38,3 +38,5 @@ gulp bower<br>
 npm run dev<br>
 
 gulp<br>
+
+Please donate for my site hosting and domain expences at <b>Paypal</b>- gupta.software@gmail.com   Thank You.
