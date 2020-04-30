@@ -10,7 +10,7 @@ Laravel is a free, open-source PHP web framework, created by Taylor Otwell and i
 
 * 1- Admin User Login and go on Top Rated Bootstrap 4.0 based UI Dashboard, User Registration and save in database.<br>
 * 2- Adding Customers and modify them and Pagination and CRUD operations for Customers.<br>
-* 3- Create, Edit, Delete, Activate/Deactive and manage Customers.<br>
+* 3- Create, Edit, Delete, Activate/Deactive (CRUD) and manage Customers.<br>
 
 
 ## Sponsers
