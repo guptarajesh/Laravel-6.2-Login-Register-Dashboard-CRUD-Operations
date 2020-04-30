@@ -67,7 +67,7 @@ If you come across any issues please [report them here](https://github.com/gupta
 
 ###  Donate & Contributing:
 
-Lets build it together I will be glad if you consider contribute to the Laravel Booking project! Please feel free to make any pull requests, or e-mail me a feature request you would like to see in the future to, <b>Rajesh Gupta</b> at gupta.software@gmail.com <br>
+Lets build it together I will be glad if you consider contribute to the Laravel 6.0 CRUD based Admin Dashboard project! Please feel free to make any pull requests, or e-mail me a feature request you would like to see in the future to, <b>Rajesh Gupta</b> at gupta.software@gmail.com <br>
  
 Please donate for my site hosting and domain expences at <b>Paypal</b>- gupta.software@gmail.com     <br>
 
