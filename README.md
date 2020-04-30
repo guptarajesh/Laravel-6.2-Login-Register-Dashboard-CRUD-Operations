@@ -1,6 +1,6 @@
 # Laravel 6.2 Login Register Dashboard CRUD Operations
 
-Laravel based CRUD application, used to User Login, Registration, Dashboard and CRUD for Manage Customers. Advanced Bootstrap 4.0 based UI for Admin Dashboard. <br>
+Laravel based CRUD application, used to User Login, Registration, Dashboard and CRUD for Manage Customers. Advanced Bootstrap 4.0 based UI (CodeBase) for Admin Dashboard. <br>
 
 ##  Laravel
 
