@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use Illuminate\Http\Request;
 use DB;
 use Validator,Redirect,Response;
@@ -17,7 +18,13 @@ class CustomerController extends Controller
     {
 	
 		if(Auth::check()){  
-        return view('customers/Customers');
+		
+		$customers = Customer::all();
+/*  		DB::connection()->enableQueryLog(); 
+		$queries = DB::getQueryLog();
+		dd($queries);
+*/        return view('customers.Customers', compact('customers'));
+			
         }
 	  return Redirect::to("login")->withSuccess('Opps! You do not have access');
     }  
@@ -25,73 +32,106 @@ class CustomerController extends Controller
     public function AddCustomers()
     {
         if(Auth::check()){  
+		
         return view('customers/AddCustomers');
+		
         }
 		return Redirect::to("login")->withSuccess('Opps! You do not have access');
     }
 	
-    
-    public function postLogin(Request $request)
-    {   //dd($request);  die; 
-        request()->validate([
-        'email' => 'required',
-        'password' => 'required',
-        ]);
-
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-		
-            // Authentication passed...
-            return redirect()->intended('dashboard');
-        }
-        return Redirect::to("login")->withSuccess('Oppes! You have entered invalid credentials');
-    }
-
-    public function postRegistration(Request $request)
+    public function postCustomer(Request $request)
     {  
+	 
         request()->validate([
         'name' => 'required',
-        'email' => 'required|email|unique:users',
-        //'contact_number' => 'required|contact_number|unique:users',
-        'password' => 'required|min:6',
+        'email' => 'required|email',
+        'phone' => 'required',
+        'username' => 'required',
+		'servername' => 'required',
+		'vehicles' => 'required',
         ]);
-        
-        $data = $request->all();
+		
+        $data = new Customer([
+            'fullname' => $request->get('name'),
+            'email' => $request->get('email'),
+            'phone' => $request->get('phone'),
+            'vehicles' => $request->get('vehicles'),
+            'communication' => $request->get('communication'),
+            'username' => $request->get('username'),
+			'servername' => $request->get('servername'),
+			'address' => $request->get('address')
+			
+        ]);
+		
+        $data->save();
+		
+		return redirect('/customers')->with('success', 'Customer is successfully Added');
 
-        $check = $this->create($data);
-      
-        return Redirect::to("dashboard")->withSuccess('Great! You have Successfully loggedin');
+		
     }
     
-    public function ViewCustomers()
+    public function ViewCustomers($customerId)
     {
 
       if(Auth::check()){  
-        return view('customers/ViewCustomers');
+	  
+	    $customers = Customer::find($customerId);
+		
+		return view('customers/ViewCustomers')->with('customer', $customers);
+		
       }
        return Redirect::to("login")->withSuccess('Opps! You do not have access');
     }
 
-	public function create(array $data)
-	{
-	  return User::create([
-	    'name' => $data['name'],
-	    'email' => $data['email'],
-	    'password' => Hash::make($data['password'])
-	  ]);
-	}
 	
-	public function EditCustomers()
+	public function EditCustomers($customerId)
     {
         if(Auth::check()){  
-        return view('customers/EditCustomers');
+		
+		     $customer = Customer::findOrFail($customerId);
+		
+        return view('customers/EditCustomers', compact('customer'));
+		
         }
 		return Redirect::to("login")->withSuccess('Opps! You do not have access');
     }
 	
+	public function postCustomerUpdate(Request $request, $id)
+    {   
+	
+		$validatedData = $request->validate([
+            'fullname' => 'required|max:255',
+            'email' => 'required|max:255',
+            'phone' => 'required',
+			'username' => 'required',
+			'servername' => 'required',
+			'vehicles' => 'required',
+			'communication' => '',
+			'address' => '',
+
+        ]);
+		
+		//dd($validatedData); die;
+		
+        	Customer::whereId($id)->update($validatedData);
+		
+		return redirect('/customers')->with('success', 'Customer is successfully updated');
+
+    }
+	
+	public function DeleteCustomers($id)
+    {
+        $customer = Customer::findOrFail($id);
+        $customer->delete();
+
+        return redirect('/customers')->with('success', 'Customer is successfully deleted');
+    }
+	
 	public function logout() {
+	
         Session::flush();
         Auth::logout();
+		
         return Redirect('login');
     }
 }

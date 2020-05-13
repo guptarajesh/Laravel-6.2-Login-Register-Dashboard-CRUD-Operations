@@ -131,11 +131,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 1; $i < 21; $i++)
+                        @for ($i = 1; $i < 6; $i++)
                         <tr>
                             <td class="text-center"><?php echo $i; ?></td>
                             <td class="font-w600">
-                                <a href="javascript:void(0)">John Doe</a>
+                                <a href="javascript:void(0)" class="align-middle link-effect text-primary-dark font-w600">John Doe</a>
                             </td>
                             <td class="d-none d-sm-table-cell">
                                 client{{ $i }}<em class="text-muted">@example.com</em>

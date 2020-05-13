@@ -3,24 +3,84 @@
 @section('content')
     <!-- Page Content -->
     <div class="content">
-        <div class="my-50 text-center">
-            <h2 class="font-w700 text-black mb-10">View Customers</h2>
-            <h3 class="h5 text-muted mb-0">Welcome to your app.</h3>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-xl-5">
-                <div class="block">
-                    <div class="block-content">
-                        <p class="text-muted">
-                            We’ve put everything together, so you can start working on your Laravel project as soon as possible! Codebase assets are integrated and work seamlessly with Laravel Mix, so you can use the npm scripts as you would in any other Laravel project.
-                        </p>
-                        <p class="text-muted">
-                            Feel free to use any examples you like from the full versions to build your own pages. <strong>Wish you all the best and happy coding!</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="block">
+                                <div class="block-header block-header-default">
+                                    <h3 class="block-title">Show Customer Detail(s)</h3><span><a href="{{url('customers')}}"><strong>Back</strong></a></span>
+                                </div>
+                                <div class="block-content block-content-full">
+									<div class="row">
+										<div class="col-md-1">&nbsp;</div>
+									<div class="col-md-4">
+										<label class="title" for="fullname">Full Name:</label>
+									</div>
+										<div class="col-md-4">{{ $customer->fullname }}</div>
+											<div class="col-md-2">&nbsp;</div>
+									</div>
+									
+																		<div class="row">
+										<div class="col-md-1">&nbsp;</div>
+									<div class="col-md-4">
+										<label for="email">Email:</label>
+									</div>
+										<div class="col-md-4">@if($customer->email)  {{  $customer->email }}   @else {{ 'N/A' }} @endif</div>
+											<div class="col-md-2">&nbsp;</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-1">&nbsp;</div>
+									<div class="col-md-4">
+										<label for="phone">Phone:</label>
+									</div>
+										<div class="col-md-4">@if($customer->phone)  {{  $customer->phone }}   @else {{ 'N/A' }} @endif</div>
+											<div class="col-md-2">&nbsp;</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-1">&nbsp;</div>
+									<div class="col-md-4">
+										<label for="username">User Name:</label>
+									</div>
+										<div class="col-md-4">@if($customer->username)  {{  $customer->username }}   @else {{ 'N/A' }} @endif</div>
+											<div class="col-md-2">&nbsp;</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-1">&nbsp;</div>
+									<div class="col-md-4">
+										<label for="servername">Server Name:</label>
+									</div>
+										<div class="col-md-4">@if($customer->servername)  {{  $customer->servername }}   @else {{ 'N/A' }} @endif</div>
+											<div class="col-md-2">&nbsp;</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-1">&nbsp;</div>
+									<div class="col-md-4">
+										<label for="vehicles">Associate Vehicle(s):</label>
+									</div>
+										<div class="col-md-4">@if($customer->vehicles)  {{  $customer->vehicles }}   @else {{ 'N/A' }} @endif</div>
+											<div class="col-md-2">&nbsp;</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-1">&nbsp;</div>
+									<div class="col-md-4">
+										<label for="communication">Communication:</label>
+									</div>
+										<div class="col-md-4">@if($customer->communication)  {{  $customer->communication }}   @else {{ 'N/A' }} @endif</div>
+											<div class="col-md-2">&nbsp;</div>
+									</div>
+																		<div class="row">
+										<div class="col-md-1">&nbsp;</div>
+									<div class="col-md-4">
+										<label for="address">Address:</label>
+									</div>
+										<div class="col-md-4">@if($customer->address)  {{  $customer->address }}   @else {{ 'N/A' }} @endif</div>
+											<div class="col-md-2">&nbsp;</div>
+									</div>
+
+                                </div>
+                            </div>
     </div>
     <!-- END Page Content -->
 @endsection

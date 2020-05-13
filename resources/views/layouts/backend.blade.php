@@ -17,7 +17,7 @@
         <link rel="shortcut icon" href="{{ asset('public/assets/media/favicons/favicon.png') }}">
         <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('public/assets/media/favicons/favicon-192x192.png') }}">
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('public/assets/media/favicons/apple-touch-icon-180x180.png') }}">
-
+		<link rel="stylesheet" type="text/css" href="{{asset('public/assets/css/admin_main_style.css')}}">
         <!-- Fonts and Styles -->
         @yield('css_before')
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
@@ -242,7 +242,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="{{ request()->is('examples/*') ? ' open' : '' }}">
+                           <!-- <li class="{{ request()->is('examples/*') ? ' open' : '' }}">
                                 <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-bulb"></i><span class="sidebar-mini-hide">Examples</span></a>
                                 <ul>
                                     <li>
@@ -255,13 +255,13 @@
                                         <a class="{{ request()->is('examples/blank') ? ' active' : '' }}" href="{{url('examples/blank')}}">Blank</a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li>-->
                             <li class="nav-main-heading">
                                 <span class="sidebar-mini-visible">MR</span><span class="sidebar-mini-hidden">More</span>
                             </li>
                             <li>
-                                <a href="{{url('dashboard')}}">
-                                    <i class="si si-globe"></i><span class="sidebar-mini-hide">Landing</span>
+                                <a href="https://www.worldtrackgps.in/" target="_blank">
+                                    <i class="si si-globe"></i><span class="sidebar-mini-hide">Go to Site</span>
                                 </a>
                             </li>
                         </ul>
@@ -532,10 +532,10 @@
             <footer id="page-footer" class="opacity-0">
                 <div class="content py-20 font-size-xs clearfix">
                     <div class="float-right">
-                        Crafted with <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="https://webespire.com" target="_blank">Webespire Consulting</a>
+                        Crafted with <i class="fa fa-heart text-pulse"></i> by <a class="align-middle link-effect text-primary-dark font-w600" href="https://webespire.com" target="_blank">Webespire Consulting</a>
                     </div>
                     <div class="float-left">
-                        <a class="font-w600" href="https://worldtrackgps.in" target="_blank">WorldTrack GPS</a> &copy; <span class="js-year-copy"></span>
+                        <a class="align-middle link-effect text-primary-dark font-w600" href="https://worldtrackgps.in" target="_blank">WorldTrack GPS</a> &copy; <span class="js-year-copy"></span>
                     </div>
                 </div>
             </footer>

@@ -26,9 +26,12 @@
 /* For Customer Module */
 	Route::get('customers', 'CustomerController@index'); 
 	Route::get('customers/add-customers', 'CustomerController@AddCustomers'); 
-	Route::get('customers/edit-customers', 'CustomerController@EditCustomers'); 
-	Route::get('customers/view-customers', 'CustomerController@ViewCustomers');
-	Route::get('delete-customers', 'CustomerController@DeleteCustomers'); 
+	Route::post('post-customer', 'CustomerController@postCustomer'); 
+	Route::get('customers/edit-customers/{customerId}', 'CustomerController@EditCustomers'); 
+	Route::put('customer-update/{id}', 'CustomerController@postCustomerUpdate'); 
+	Route::get('customers/view-customers/{customerId}', 'CustomerController@ViewCustomers');
+	Route::get('customers/delete-customers/{id}', 'CustomerController@DeleteCustomers'); 
+	Route::resource('customers', 'CustomerController');
 	
 	/* For Vehicle Module */
 	Route::get('vehicles', 'VehicleController@index'); 
@@ -61,4 +64,5 @@
 	Route::view('/examples/plugin-helper', 'examples.plugin_helper');
 	Route::view('/examples/plugin-init', 'examples.plugin_init');
 	Route::view('/examples/blank', 'examples.blank');
+	
 	
